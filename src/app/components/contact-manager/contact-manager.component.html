@@ -1,1 +1,77 @@
-<p>contact-manager works!</p>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col">
+      <p class="tw-bold">
+        Contact manager
+
+        <a routerLink="/contact/add" class="btn btn-primary btn-sm">
+          <i class="fa fa-plus"></i> New Contact
+        </a>
+      </p>
+      <p class="fst-italic fw-bold">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe,
+        nostrum!
+      </p>
+      <form action="">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col">
+                <input
+                  type="text"
+                  placeholder="Serach contact"
+                  class="form-control"
+                />
+              </div>
+              <div class="col">
+                <input
+                  type="submit"
+                  class="btn btn-outline-primary"
+                  value="Search"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Cards -->
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card list-group-item list-group-item-primary">
+        <div class="card-body ">
+          <div class="row align-items-center">
+            <div class="col-sm-4">
+              <img
+                src="https://ik.imagekit.io/azn6jixxj/Ines/kurabica.jpg?updatedAt=1685355386388"
+                alt=""
+                class="contact-omg"
+              />
+            </div>
+            <div class="col-sm-7">
+              <ul class="list-group">
+                <li class="list-group-item"> Name : <span class="fw-bold">Name</span></li>
+                <li class="list-group-item"> Email : <span class="fw-bold">Name</span></li>
+                <li class="list-group-item"> Phone :<span class="fw-bold">Name</span></li>
+
+
+              </ul>
+            </div>
+            <div class="col-sm-1 d-flex flex-column justify-content-center align-items-center">
+              <a class="btn btn-warning my-1" routerLink="/contact/view/:contactId"> <i class="fa fa-eye"></i></a>
+              <a class="btn btn-primary my-1" routerLink="/contact/edit/:contactId"> <i class="fa fa-pen"></i></a>
+              <button class="btn btn-danger my-1" > <i class="fa fa-trash"></i></button>
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
