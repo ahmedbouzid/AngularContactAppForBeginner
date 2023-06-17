@@ -9,6 +9,7 @@ import { EditComponent } from './components/edit/edit.component';
 import { ViewContactComponent } from './components/view-contact/view-contact.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { AddContactComponent } from './components/add-contact/add-contact.component';
+import { PagenNotFoundComponent } from './components/pagen-not-found/pagen-not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import { AddContactComponent } from './components/add-contact/add-contact.compon
     EditComponent,
     ViewContactComponent,
     SpinnerComponent,
-    AddContactComponent
+    AddContactComponent,
+    PagenNotFoundComponent
   ],
   imports: [
     BrowserModule,
