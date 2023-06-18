@@ -12,34 +12,35 @@
 <div class="container">
   <div class="row align-items-center">
     <div class="col-sm-4">
-      <form action="">
+      <form (submit)="UpdaateForm()" >
         <div class="mb-2">
-          <input type="text" class="form-control" placeholder="name" name="" id="">
+          <input required="true"  [(ngModel)]="contact.name" name="name" [ngModelOptions]="{standalone:true}" class="form-control" placeholder="name" name="" id="">
         </div>
         <div class="mb-2">
-          <input type="text" class="form-control" placeholder="email" name="" id="">
+          <input required="true" [(ngModel)]="contact.email" name="email" [ngModelOptions]="{standalone:true}" class="form-control"  placeholder="email" name="" id="">
         </div>
         <div class="mb-2">
-          <input type="text" class="form-control" placeholder="phone" name="" id="">
+          <input required="true" [(ngModel)]="contact.mobile" name="mobile" [ngModelOptions]="{standalone:true}" class="form-control" placeholder="phone" name="" id="">
         </div>
         <div class="mb-2">
-          <input type="text" class="form-control" placeholder="company" name="" id="">
+          <input required="true" [(ngModel)]="contact.company" name="company" [ngModelOptions]="{standalone:true}" class="form-control" placeholder="company" name="" id="">
         </div>
         <div class="mb-2">
-          <input type="text" class="form-control" placeholder="photo" name="" id="">
+          <input required="true" [(ngModel)]="contact.photo" name="photo" [ngModelOptions]="{standalone:true}" class="form-control" placeholder="photo" name="" id="">
         </div>
         <div class="mb-2">
-          <input type="text" class="form-control" placeholder="title" id="">
+          <input required="true" [(ngModel)]="contact.title" name="title" [ngModelOptions]="{standalone:true}" class="form-control" placeholder="title" id="">
         </div>
         <div class="mb-2">
-          <select class="form-control">
+          <select [(ngModel)]="contact.groubId" name="groupId" [ngModelOptions]="{standalone:true}" class="form-control" *ngIf="groups.length>0">
             <option value=""> Select Group</option>
+            <option [value]="group.id"  *ngFor="let group of groups"> {{group.name}} </option>
           </select>
 
         </div>
         <div class="mb-2">
 
-          <button class="btn btn-primary"> Create</button>
+          <button class="btn btn-primary"> update</button>
           <a class="btn btn-dark ms-3" routerLink="/"> Close</a>
         </div>
       </form>

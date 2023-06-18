@@ -1,5 +1,5 @@
 import { Component , OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Contact } from 'src/app/models/contactDTO';
 import { Group } from 'src/app/models/groupDTO';
 import { ContactServicesService } from 'src/app/service/contact-services.service';
@@ -14,9 +14,11 @@ loading : boolean = false ;
 contactId : string | null = null ;
 contact : Contact = {} as Contact ;
 errorMessge : string | null = null ;
-groups : Group = [] as Group | any ;
+groups !: Group[]; ;
 
-constructor(private currrenteRoute : ActivatedRoute , private service : ContactServicesService) {}
+constructor(private currrenteRoute : ActivatedRoute ,
+    private router : Router,
+  private service : ContactServicesService) {}
 ngOnInit(): void {
   this.loading = true
 this.currrenteRoute.paramMap.subscribe({
@@ -42,5 +44,20 @@ if (this.contactId) {
     }
   })
 }
+}
+UpdaateForm() {
+ if (this.contactId) {
+  this.service.updateContact(this.contact , this.contactId)
+  .subscribe({
+    next : (data : Contact) => {
+      this.router.navigate(['/'])
+      console.log(data);
+
+    } ,
+    error : err => {
+      this.errorMessge = err ;
+    }
+  })
+ }
 }
 }
