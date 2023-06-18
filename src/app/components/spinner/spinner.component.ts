@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Contact } from 'src/app/models/contactDTO';
 
 @Component({
   selector: 'app-spinner',

@@ -1,19 +1,53 @@
 {
-  "posts": [
+  "contacts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "id": "1",
+      "name": "Ahmed",
+      "company": "Ines",
+      "email" : "email@mail.com",
+      "title" : "Dev",
+      "photo1":"https://ik.imagekit.io/azn6jixxj/Ines/images__3_.jpg?updatedAt=1687037458465",
+      "groupId" : "3"
+    },
+    {
+      "id": "1",
+      "name": "Gon",
+      "company": "Ines",
+      "email" : "email@mail.com",
+      "title" : "Dev",
+      "photo1":"https://ik.imagekit.io/azn6jixxj/Ines/kurabica.jpg?updatedAt=1685355386388",
+      "groupId" : "3"
+    },    {
+      "id": "1",
+      "name": "Luffy",
+      "company": "Ines",
+      "email" : "Luffy@mail.com",
+      "title" : "Dev",
+      "photo1":"https://ik.imagekit.io/azn6jixxj/Ines/images__2_.jpg?updatedAt=1685529677479",
+      "groupId" : "3"
+    },    {
+      "id": "1",
+      "name": "L",
+      "company": "Ines",
+      "email" : "L@mail.com",
+      "title" : "Dev",
+      "photo1":"https://ik.imagekit.io/azn6jixxj/Ines/images__3_.jpg?updatedAt=1687037458465",
+      "groupId" : "3"
     }
   ],
-  "comments": [
+  "groups": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": "3",
+      "name": "Family"
+    },
+    {
+      "id": "2",
+      "name": "Brother"
+    },
+    {
+      "id": "1",
+      "name": "Ess"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
+
 }
