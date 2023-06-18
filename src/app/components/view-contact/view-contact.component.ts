@@ -22,7 +22,7 @@ this.currnteRoute.paramMap.subscribe({
     this.contactId = param.get('contactId')
 
     console.log(this.contactId);
-
+ 
   }
 })
  if (this.contactId) {
