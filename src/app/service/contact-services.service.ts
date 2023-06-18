@@ -26,10 +26,10 @@ export class ContactServicesService {
   deleteContact(contactId : string) {
     return this.http.delete<{}>(this.API + 'contacts/' + contactId)
   }
-  getAllGroups () : Observable<Group[] > {
-    return this.http.get<Group[]>(this.API+'groups')
+  getAllGroups () : Observable<Group > {
+    return this.http.get<Group>(this.API+'groups')
   }
-  getOneGroup (groubId : string) : Observable<Group>{
- return this.http.get<Group> (this.API+'groups/'+groubId)
+  getOneGroup (contact  :Contact ) : Observable<Group>{
+ return this.http.get<Group> (`${this.API}groups/${contact.groubId}`)
   }
 }
