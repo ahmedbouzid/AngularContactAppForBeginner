@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Contact } from 'src/app/models/contactDTO';
 import { ContactServicesService } from 'src/app/service/contact-services.service';
 
@@ -11,8 +12,12 @@ export class ContactManagerComponent implements OnInit {
   loading: boolean = false;
   contacts: Contact[] = [];
   errorMessage: string | null = null;
-  constructor(private service: ContactServicesService) {}
+  constructor(private service: ContactServicesService , private currentRoute : ActivatedRoute) {}
   ngOnInit(): void {
+this.getAllContact()
+
+  }
+   getAllContact() {
     this.loading = true;
     this.service.getAllContact().subscribe({
       next: (data: Contact[]) => {
@@ -26,5 +31,18 @@ export class ContactManagerComponent implements OnInit {
         this.errorMessage = err;
       },
     });
+
+   }
+
+  deleteOneContact(contactId:string){
+    if (contactId) {
+
+      this.service.deleteContact(contactId).subscribe({
+        next : (data : {} ) => {
+          this.getAllContact()
+        }
+    })
+
+    }
   }
 }
