@@ -1,10 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Contact } from 'src/app/models/contactDTO';
+import { Group } from 'src/app/models/groupDTO';
+import { ContactServicesService } from 'src/app/service/contact-services.service';
 
 @Component({
   selector: 'app-add-contact',
   templateUrl: './add-contact.component.html',
-  styleUrls: ['./add-contact.component.scss']
-}) 
-export class AddContactComponent {
+  styleUrls: ['./add-contact.component.scss'],
+})
+export class AddContactComponent implements OnInit {
+  loading: boolean = false;
+  contact: Contact = {} as Contact;
+  errorMessage: string | null = null;
+  groups!: Group[];
 
+  constructor(private service: ContactServicesService) {}
+  ngOnInit(): void {
+    this.service.getAllGroups().subscribe({
+      next: (data: Group[]) => {
+        this.groups = data;
+        console.log(this.groups);
+      },
+        error : (err)=> {
+          this.errorMessage = err
+        }
+    });
+  }
 }
