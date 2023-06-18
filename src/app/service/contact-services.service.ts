@@ -17,7 +17,7 @@ export class ContactServicesService {
   getOneContact(contactId : string):Observable<Contact> {
     return this.http.get<Contact>(this.API +'contacts/' +contactId)
   }
-  createOneConntact(payload:Contact) {
+  createOneConntact(payload:Contact) : Observable<any> {
     return this.http.post(this.API + 'contacts' ,payload)
   }
   updateContact (contact : Contact , idContact :string) {
