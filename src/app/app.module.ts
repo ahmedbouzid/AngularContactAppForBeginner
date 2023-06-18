@@ -10,6 +10,7 @@ import { ViewContactComponent } from './components/view-contact/view-contact.com
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { AddContactComponent } from './components/add-contact/add-contact.component';
 import { PagenNotFoundComponent } from './components/pagen-not-found/pagen-not-found.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { PagenNotFoundComponent } from './components/pagen-not-found/pagen-not-f
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
